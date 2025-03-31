@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongodb-pv
+  namespace: three-tier
+spec:
+  capacity:
+    storage: 5Gi  # Adjust the storage size based on your requirement
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain  # This can also be 'Delete' if you want the volume deleted when the pod is deleted
+  storageClassName: standard  # You can change this to match your Kubernetes setup's StorageClass
+  hostPath:
+    path: "/mnt/data/mongodb"  # For local storage, you can use a host path; replace with appropriate storage class for cloud environments.

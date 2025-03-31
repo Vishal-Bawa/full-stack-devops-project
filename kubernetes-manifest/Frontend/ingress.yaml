@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mainlb
+  annotations:
+    # ALB Ingress Controller annotations
+    alb.ingress.kubernetes.io/scheme: internet-facing   # internet-facing or internal
+    alb.ingress.kubernetes.io/target-type: ip           # ip (use IP as target type)
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'  # Define the listen ports
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: api
+                port:
+                  number: 3500
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port: 
+                  number: 8080
