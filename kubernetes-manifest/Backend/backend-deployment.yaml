@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: three-tier
+  namespace: new
 spec:
   replicas: 1
   selector:
