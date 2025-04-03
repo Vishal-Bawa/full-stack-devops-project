@@ -21,7 +21,7 @@ metadata:
     # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:257128486619:certificate/7163f5d1-ccdc-43bc-a6e4-4bf1cb3a47dd  # Uncomment and update if using HTTPS
     # alb.ingress.kubernetes.io/ssl-redirect: "443"
     # Load Balancer Name
-    alb.ingress.kubernetes.io/load-balancer-name: my-alb
+    alb.ingress.kubernetes.io/load-balancer-name: newalb
 spec:
   ingressClassName: alb
   rules:
