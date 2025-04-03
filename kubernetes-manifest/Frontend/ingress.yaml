@@ -18,7 +18,7 @@ metadata:
     alb.ingress.kubernetes.io/subnets:  subnet-0183a79277eadd98c , subnet-0829134eafc958488 ## Need to Paste Public Subnets of VPC
     # SSL certifacte Setting
     # SSL certifacte Setting
-    # alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+     alb.ingress.kubernetes.io/listen-ports: {"HTTP":80}
     # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-1:257128486619:certificate/7163f5d1-ccdc-43bc-a6e4-4bf1cb3a47dd # need to change with acm arn
     # alb.ingress.kubernetes.io/ssl-redirect: '443'
     # Load Balancer Name
