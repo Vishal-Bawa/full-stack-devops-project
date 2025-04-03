@@ -2,11 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mainlb
+  namespace: three-tier
   annotations:
     # ALB Ingress Controller annotations
     alb.ingress.kubernetes.io/scheme: internet-facing   # internet-facing or internal
     alb.ingress.kubernetes.io/target-type: ip           # ip (use IP as target type)
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'  # Define the listen ports
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]' 
+    alb.ingress.kubernetes.io/load-balancer-name: my-alb
 spec:
   ingressClassName: alb
   rules:
