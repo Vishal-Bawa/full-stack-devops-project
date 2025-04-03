@@ -9,6 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip           # ip (use IP as target type)
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]' 
     alb.ingress.kubernetes.io/load-balancer-name: my-alb
+    alb.ingress.kubernetes.io/subnets: subnet-0829134eafc958488 subnet-0183a79277eadd98c
 spec:
   ingressClassName: alb
   rules:
